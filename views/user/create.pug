@@ -1,0 +1,87 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet' href='/css/signup.css')
+  link(rel='stylesheet' href='/font/css/all.css')
+.arealogin
+  .menu
+    ul
+      li.special_item
+        img(src='./images/menu.png' alt='' srcset='')
+      .menu-right
+        li
+          a(href='') Home
+        li
+          a(href='') Job IT
+        li
+          a(href='') Contact Us
+        li
+          a(href='')
+            | Signin 
+            i.fas.fa-registered
+        li
+          a(href='')
+            | Login 
+            i.fas.fa-sign-in-alt
+  .mobile
+    // check kiểm tra overlay
+    input#nav-mobile-input.navss(type='checkbox' name='')
+    // Vùng đen
+    label.nav__overlay(for='nav-mobile-input')
+    // icon menu
+    label.nav__bars-btn(for='nav-mobile-input')
+      i.fas.fa-bars
+    .nav_mobile
+      label.nav_bars-close(for='nav-mobile-input')
+        i.fas.fa-times
+      ul.nav_mobile-list
+        li
+          a.nav_mobile_link(href='#')     Home
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-award
+            |        Job IT
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-file-signature
+            |        Contact Us
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-user-plus
+            |        Sign Up
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-sign-in-alt
+            |        Logout
+  form(action='')
+    .imgcontainer
+      .avatar
+        // <i class="far fa-registered">egister</i>
+        i.fas.fa-registered egister
+    .container
+      .form-group
+        input(type='text' placeholder='Username' name='uname' required='')
+        input(type='phonenumb' placeholder='Phone number' name='phonenumb' required='')
+      .form-group
+        input(type='text' placeholder='Email' name='email' required='')
+        input(type='text' placeholder='Re-enter email' name='re-email' required='')
+      .form-group
+        input(type='password' placeholder='Enter Password' name='psw' required='')
+        input(type='text' placeholder='Re-enter password' name='re-psw' required='')
+      label.dateofb Date of birth
+      .form-group
+        input(type='date' placeholder='Enter Password' name='date' required='')
+        input(type='text' placeholder='Address' name='address' required='')
+      .gender
+        input#male(type='radio' name='gender' value='male')
+        label(for='male') Male
+        br
+        input#female(type='radio' name='gender' value='female')
+        label(for='female') Female
+        br
+      .inputskills
+        input(type='text' placeholder='Input your skills' name='inputskill' required='')
+      button(type='submit') Resister

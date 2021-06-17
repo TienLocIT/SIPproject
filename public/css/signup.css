@@ -1,0 +1,275 @@
+*{
+  margin:0;
+  padding: 0;
+}
+.arealogin{
+  background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)) ,url("./image/pexels-photo-374016\ 1.png");
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  height: 100vh;
+}
+  /* ------------form sign up-------------------- */
+/* form sign up*/
+form {
+    background: linear-gradient(rgba(92, 92, 94, 0.404),rgba(56, 56, 56, 0.425));
+    box-shadow: 0 0 2px 2px #149E33;
+    top: 90px;
+    height:521px;
+    width: 600px;
+    position: absolute;
+    border-radius: 3px ;
+    left: 27%;
+}
+  /* Full-width inputs */
+input[type=text], input[type=password], input[type=phonenumb],input[type=Date]{
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    border: 1px solid ;
+    vertical-align: baseline;
+    font-size: 100%;
+    font: inherit;
+    flex-basis: 50.4%;
+  }
+.dateofb{
+  width: 100%;
+  color: #fff;
+  margin: 8px 10px;
+}
+  
+  /* Set a style for all buttons */
+button {
+    background-color: #149E33;
+    color: white;
+    padding: 14px 20px;
+    margin: 0px 125px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+button:hover {
+    opacity: 0.8;
+}
+  
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #149E33;
+}
+  
+  /* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+/* icon avata account */
+.avatar i{
+    color: #149E33;
+    font-size: 57px;
+
+}
+  
+  /* The "Forgot password" text */
+
+.form-group{
+  display: flex;
+  justify-content: space-between;
+}
+.gender{
+  color: #fff;
+  margin: 8px 10px;
+}
+.inputskills{
+  display: inline-block; 
+  width: 98%;
+}
+/* end sign up */
+/* --------------responsive-------------- *//* Change styles for span and cancel button on extra small screens */
+/* css nav bar icon */
+.nav__bars-btn{
+  font-size: 27px;
+  color:rgb(226, 222, 222);
+  position: absolute;
+  top:5%;
+  right: 10%;
+  display:none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav__overlay{
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  animation: fadein linear 1.3s;
+}
+.navss {
+  display:none;
+}
+/* checked overlay */
+.navss:checked ~ .nav__overlay{
+  display:block;
+  z-index: 1;
+}
+.navss:checked ~ .nav_mobile{
+  transform: translateX(0%);
+  z-index:2;
+  opacity: 1;
+}
+/* css cho mobile */
+.nav_mobile{
+  position:fixed;
+  right:0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background-color:rgb(54, 51, 51);
+  max-width:100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all linear 0.5s;
+}
+.nav_bars-close{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color:#fff;
+  cursor: pointer;
+}
+.nav_mobile-list{
+  margin-top:24px;
+  list-style: none;
+}
+.nav_mobile_link{
+  margin: 50px 0;
+  margin-left: 50px;
+  text-decoration: none;
+  color:#fff;
+  display: block;
+  font-size: 1.4 rem;
+  transition: 0.4s;
+}
+/* hover link mobile */
+.nav_mobile_link:Hover{
+  transition: 0.4s;
+  text-shadow: 1px 1px 2px rgb(197, 194, 194), 0 0 25px rgb(115, 255, 0), 0 0 5px rgb(0, 139, 53);
+}
+  /* Change styles for span and cancel button on extra small screens */
+  form{
+    background: linear-gradient(rgba(92, 92, 94, 0.404),rgba(56, 56, 56, 0.425));
+    box-shadow: 0 0 2px 2px #149E33;
+    top: 93px;
+    height:519px;
+    width: 500px;
+    position: absolute;
+    border-radius: 3px ;
+    left: 30%;
+    z-index: 0;
+  }
+@media screen and (max-width: 18.75em) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+    form{
+      left: 1%;
+      top:90px;
+    }
+}
+@media screen and (max-width: 46.25em){
+    form{
+      left: 24%;
+      top:80px;
+    }
+}
+/* response tablet */
+@media (max-width: 63em){
+  form{
+    left: 20%;
+    top:90px;
+  }
+  .menu-right{
+    display: none;
+  }
+  .nav__bars-btn{
+    display: block;
+  }
+}
+.navss {
+  display:none;
+}
+/* checked overlay */
+.navss:checked ~ .nav__overlay{
+  display:block;
+}
+@keyframes fadein{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* css home menu chính gửi*/
+.menu{
+  height: 65px;
+  background:rgba(46, 41, 41, 1);
+  width: 100%;
+}
+.menu ul {
+  background:rgba(46, 41, 41, 1);
+  list-style-type: none;
+  text-align: center;
+  position: relative;
+}
+.menu li {
+  margin: 0% 0%;
+  color: #f1f1f1;
+  display: inline-block;
+  width: 120px;
+  height: 65px;
+  line-height: 40px;
+  margin-left: -5px;
+  list-style: none;
+}
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  line-height: 65px;
+}
+.menu a:hover {
+  background: #F1F1F1;
+  color: #333;
+  transition: 0.4s;
+}
+.special_item{
+  height: 50%;
+  width: 50%;
+  float: left;
+  padding-left: 10%;
+}
+#lgImg{
+  margin-top: 10%;
+  margin-left: -250%;
+  margin-right: 5%;
+  float: left;
+}
+
+
+
+
+

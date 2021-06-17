@@ -1,0 +1,281 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.arealogin{
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)) ,url("./image/gggg.jpg");
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    height: 100vh;
+}
+.nav__bars-btn{
+    font-size: 27px;
+    color:rgb(226, 222, 222);
+    position: absolute;
+    top:5%;
+    right: 10%;
+    display:none;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .nav__overlay{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+    animation: fadein linear 1.3s;
+  }
+  .navss {
+    display:none;
+  }
+  /* checked overlay */
+  .navss:checked ~ .nav__overlay{
+    display:block;
+    z-index: 1;
+  }
+  .navss:checked ~ .nav_mobile{
+    transform: translateX(0%);
+    z-index:2;
+    opacity: 1;
+  }
+  /* css cho mobile */
+  .nav_mobile{
+    position:fixed;
+    right:0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color:rgb(54, 51, 51);
+    max-width:100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all linear 0.5s;
+  }
+  .nav_bars-close{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color:#fff;
+    cursor: pointer;
+  }
+  .nav_mobile-list{
+    margin-top:24px;
+    list-style: none;
+  }
+  .nav_mobile_link{
+    margin: 50px 0;
+    margin-left: 50px;
+    text-decoration: none;
+    color:#fff;
+    display: block;
+    font-size: 1.4 rem;
+    transition: 0.4s;
+  }
+  /* hover link mobile */
+  .nav_mobile_link:Hover{
+    transition: 0.4s;
+    text-shadow: 1px 1px 2px rgb(197, 194, 194), 0 0 25px rgb(115, 255, 0), 0 0 5px rgb(0, 139, 53);
+  }
+    /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 18.75em) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+      .cancelbtn {
+        width: 100%;
+      }
+      form{
+        left: 1%;
+        top:90px;
+      }
+  }
+  @media screen and (max-width: 46.25em){
+      form{
+        left: 24%;
+        top:100px;
+      }
+  }
+  /* response tablet */
+  @media (max-width: 63em){
+    form{
+      left: 30%;
+      top:100px;
+    }
+    .menu-right{
+      display: none;
+    }
+    .nav__bars-btn{
+      display: block;
+    }
+  }
+  .navss {
+    display:none;
+  }
+  /* checked overlay */
+  .navss:checked ~ .nav__overlay{
+    display:block;
+  }
+  @keyframes fadein{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  /* css home menu chính gửi*/
+  .menu{
+    height: 65px;
+    background:rgba(46, 41, 41, 1);
+    width: 100%;
+  }
+  .menu ul {
+    background:rgba(46, 41, 41, 1);
+    list-style-type: none;
+    text-align: center;
+    position: relative;
+  }
+  .menu li {
+    margin: 0% 0%;
+    color: #f1f1f1;
+    display: inline-block;
+    width: 120px;
+    height: 65px;
+    line-height: 40px;
+    margin-left: -5px;
+    list-style: none;
+  }
+  .menu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    line-height: 65px;
+  }
+  .menu a:hover {
+    background: #F1F1F1;
+    color: #333;
+    transition: 0.4s;
+  }
+  .special_item{
+    height: 50%;
+    width: 50%;
+    float: left;
+    padding-left: 10%;
+  }
+  #lgImg{
+    margin-top: 10%;
+    margin-left: -250%;
+    margin-right: 5%;
+    float: left;
+  }
+  /* ----------------------------------css cho form information ---------------------- */
+form{
+    top: 65px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.795),rgba(255, 245, 245, 0.726));
+}
+h1{
+    margin: 13px 14px;
+}
+p{
+    margin: 13px 14px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=phonenumb],input[type=Date] {
+    width: 60%;
+  padding: 10px;
+  margin: 2px 3px;
+  border: none;
+  background: #94939323;
+  height:5px;
+}
+.input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin-bottom: 15px;
+}
+.input-title {
+    margin-bottom: 10px;
+}
+.input-title span {
+    color: #d93025;
+}
+.input-text {
+    background-color: #fff;
+    height: 24px;
+    line-height: 34px;
+    width: 100%;
+    padding: 0 0 0 1px;
+    font-size: 15px;
+    color: #111;
+    border: 1px solid;
+    border-color: rgba(0,0,0,0.12);
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.input-text:focus {
+    outline: none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    border-color: #03a9f4;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.updatebtn {
+  background-color: #149E33;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 12px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  opacity: 0.9;
+}
+
+.updatebtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: rgb(255, 30, 30);
+}
+/* Set a grey background color and center the text of the "sign in" section */
+
+  

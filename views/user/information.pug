@@ -1,0 +1,102 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet' href='/css/information.css')
+  link(rel='stylesheet' href='/font/css/all.css')
+.arealogin
+  .menu
+    ul
+      li.special_item
+        img(src='/images/menu.png' alt='' srcset='')
+      .menu-right
+        li
+          a(href='') Home
+        li
+          a(href='') Job IT
+        li
+          a(href='') Contact Us
+        li
+          a(href='')
+            | Signin 
+            i.fas.fa-registered
+        li
+          a(href='')
+            | Login 
+            i.fas.fa-sign-in-alt
+  .mobile
+    // check kiểm tra overlay
+    input#nav-mobile-input.navss(type='checkbox' name='')
+    // Vùng đen
+    label.nav__overlay(for='nav-mobile-input')
+    // icon menu
+    label.nav__bars-btn(for='nav-mobile-input')
+      i.fas.fa-bars
+    .nav_mobile
+      label.nav_bars-close(for='nav-mobile-input')
+        i.fas.fa-times
+      ul.nav_mobile-list
+        li
+          a.nav_mobile_link(href='#')     Home
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-award
+            |        Job IT
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-file-signature
+            |        Contact Us
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-user-plus
+            |        Sign Up
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-sign-in-alt
+            |        Logout
+  form(action='action_page.php')
+    .container
+      h1 Your information
+      p Can be changed your information
+      marquee(behavior='' direction='') New job! $650-1000 USD Frontend wed app Developer Qu&#x1EAD;n &Dstrok;&#x1ED1;ng &Dstrok;a- H&agrave; N&#x1ED9;i
+      hr
+      .input-group
+        .input-title
+          | Full name 
+          span *
+        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+      .input-group
+        .input-title
+          | Phone number: 
+          span *
+        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+      .input-group
+        .input-title
+          | Email: 
+          span *
+        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+      .input-group
+        .input-title
+          | Change password Now 
+          span *
+        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+      .input-group
+        .input-title
+          | Address 
+          span *
+        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+      .input-group
+        .input-title
+          | Hobbies 
+          span *
+        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+      .input-group
+        .input-title
+          | Skills 
+          span *
+        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+      hr
+      button.updatebtn(type='submit') Update
+      button.updatebtn(type='submit') Cancel

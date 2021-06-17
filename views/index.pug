@@ -1,0 +1,436 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Document
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+  // <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  link(rel='stylesheet' href='/fa/css/all.css')
+  // <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+  link(rel='stylesheet' href='/css/Home.css')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css2?family=Paprika&display=swap' rel='stylesheet')
+// Menu
+.menu
+  ul
+    li.special_item
+      img(src='/images/logo.PNG' alt='' srcset='')
+    li
+      a(href='') Home
+    li
+      a(href='') Job IT
+    li
+      a(href='') Contact Us
+    li
+      a(href='')
+        | Signin 
+        i.fas.fa-registered
+    li
+      a(href='')
+        | Login 
+        i.fas.fa-sign-in-alt
+// banner
+#banner
+  #banner-body
+    h3#banner-title
+      | We offer 
+      span 1,259
+      |  job vacancies right now!
+    p#banner-text  Find your desire one in a minute
+// sub-banner
+.sub-banner
+  .banner-content
+    .title SEARCH FOR PROFESSIONAL
+    input.form-control.banner-search(type='text' placeholder='Searching' aria-label='Username' aria-describedby='basic-addon1')
+    .label-item
+      a.form-check-labe(href='') JavaScript
+      a.form-check-labe(href='') Java
+      a.form-check-labe(href='') ReactJs
+// Intro
+.container-fluid.intro
+  h3(style='text-align: center;')
+    | WE CAN HELP YOU 
+    span  GET A JOB !
+  .row
+    .col-xl-7
+      p
+        span.red Featured
+        |  Company
+      .row.slide
+        #carouselId.carousel.slide(data-ride='carousel')
+          .carousel-inner(role='listbox')
+            .carousel-item.active
+              img(src='./images/leftIntro.jpg' alt='First slide')
+              .right-content(style='color: black;')
+                .card
+                  .card-body
+                    h5.card-title Korean IT Comapny
+                    p.card-text Ha No, HCM
+                    a(href='') xem them
+            .carousel-item
+              img(src='./images/leftIntro.jpg' alt='Second slide')
+              .right-content(style='color: black;')
+                .card
+                  .card-body
+                    h5.card-title Korean IT Comapny
+                    p.card-text Ha No, HCM
+                    a(href='') xem them
+            .carousel-item
+              img(src='./images/leftIntro.jpg' alt='Third slide')
+              .right-content(style='color: black;')
+                .card
+                  .card-body
+                    h5.card-title Korean IT Comapny
+                    p.card-text Ha No, HCM
+                    a(href='') xem them
+          a.carousel-control-next(href='#carouselId' role='button' data-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true' style='background-color: rgba(0, 0, 0, 0.816);')
+            span.sr-only Next
+    .col-xl-5.hot-job
+      p(style='text-align: center;')
+        span.red Hot
+        |  Job today
+      #carouselHotJob.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselHotJob' data-slide-to='0')
+          li(data-target='#carouselHotJob' data-slide-to='1')
+          li(data-target='#carouselHotJob' data-slide-to='2')
+        .carousel-inner(role='listbox')
+          .carousel-item.active
+            ul
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/Mobi.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/VNIB.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Advesa Digital Solutions Front-end React Developer 
+                      a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/ACB.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
+                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+          .carousel-item
+            ul
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/Mobi.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
+                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/VNIB.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Advesa Digital Solutions Front-end React Developer 
+                      a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/ACB.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
+                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+          .carousel-item
+            ul
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/Mobi.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
+                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/VNIB.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Advesa Digital Solutions Front-end React Developer 
+                      a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+              li
+                .container
+                  .row
+                    .col-3
+                      a(href='')
+                        img(src='./images/ACB.png' alt='' srcset='')
+                    .col-8.ml-4
+                      h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
+                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        a.carousel-control-prev(href='#carouselHotJob' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselHotJob' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+// Featured Employer
+.container-fluid.jobs(style='background-color: rgba(219, 242, 224, 1);')
+  h4.pb-3.pt-3 Featured Jobs
+  div
+    #carouselFeaturedJob.carousel.slide(data-ride='carousel')
+      .carousel-inner(role='listbox')
+        .carousel-item.active
+          .row
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+        .carousel-item
+          .row
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+        .carousel-item
+          .row
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+            .company
+              img.company-img(src='./images/Hansen.png' alt='' srcset='')
+              p Hansen Technologies
+      a.carousel-control-prev(href='#carouselFeaturedJob' role='button' data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true' style='background-color: rgba(0, 0, 0, 0.816);')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselFeaturedJob' role='button' data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true' style='background-color: rgba(0, 0, 0, 0.816);')
+        span.sr-only Next
+// latest jobs
+.container-fluid
+  h3(style='text-align: center;')
+    | Latest 
+    span Jobs
+  h5(style='text-align: center;') Here you can see
+  .row
+    .col-sm-6
+      ul
+        li
+          .container
+            .row
+              .col-3
+                a(href='')
+                  img(src='/images/Mobi.png' alt='' srcset='')
+              .col-8.ml-4
+                h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
+                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        li
+          .container
+            .row
+              .col-3
+                a(href='')
+                  img(src='/images/VNIB.png' alt='' srcset='')
+              .col-8.ml-4
+                h5 Advesa Digital Solutions Front-end React Developer 
+                a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        li
+          .container
+            .row
+              .col-3
+                a(href='')
+                  img(src='/images/ACB.png' alt='' srcset='')
+              .col-8.ml-4
+                h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
+                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        li
+          .container
+            .row
+              .col-3
+                a(href='')
+                  img(src='/images/ACB.png' alt='' srcset='')
+              .col-8.ml-4
+                h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
+                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+    .col-sm-6
+      ul
+        li
+          .container
+            .row
+              .col-3
+                a(href='')
+                  img(src='/images/Mobi.png' alt='' srcset='')
+              .col-8.ml-4
+                h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
+                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        li
+          .container
+            .row
+              .col-3
+                a(href='')
+                  img(src='/images/Mobi.png' alt='' srcset='')
+              .col-8.ml-4
+                h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
+                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        li
+          .container
+            .row
+              .col-3
+                a(href='')
+                  img(src='/images/VNIB.png' alt='' srcset='')
+              .col-8.ml-4
+                h5 Advesa Digital Solutions Front-end React Developer 
+                a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        li
+          .container
+            .row
+              .col-3
+                a(href='')
+                  img(src='/images/ACB.png' alt='' srcset='')
+              .col-8.ml-4
+                h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
+                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+// img-show
+.container-fluid.show(style="background-image: url('/images/Show.png');")
+  .img-show
+    .row
+      .col-sm-3
+        p
+          | 80000 
+          br
+          |  Registered Members
+      .col-sm-1
+      .col-sm-3
+        p
+          | 80000 
+          br
+          |  Registered Members
+      .col-sm-1
+      .col-sm-3
+        p
+          | 80000 
+          br
+          |  Registered Members
+// Popular Company
+.container.popular
+  h3(style='text-align: center;')
+    | Popular 
+    span Company
+  h5(style='text-align: center;') Here you can see
+  .row.companys
+    .col-sm-4
+      .card
+        a(href='')
+          img.card-img-top(src='/images/Korean.png' alt='')
+        .card-body
+          h4.card-title Korean IT Company
+          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
+          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
+    .col-sm-4
+      .card
+        a(href='')
+          img.card-img-top(src='/images/Korean.png' alt='')
+        .card-body
+          h4.card-title Korean IT Company
+          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
+          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
+    .col-sm-4
+      .card
+        a(href='')
+          img.card-img-top(src='/images/Korean.png' alt='')
+        .card-body
+          h4.card-title Korean IT Company
+          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
+          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
+  .row.companys
+    .col-sm-4
+      .card
+        a(href='')
+          img.card-img-top(src='/images/Korean.png' alt='')
+        .card-body
+          h4.card-title Korean IT Company
+          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
+          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
+    .col-sm-4
+      .card
+        a(href='')
+          img.card-img-top(src='/images/Korean.png' alt='')
+        .card-body
+          h4.card-title Korean IT Company
+          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
+          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
+    .col-sm-4
+      .card
+        a(href='')
+          img.card-img-top(src='/images/Korean.png' alt='')
+        .card-body
+          h4.card-title Korean IT Company
+          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
+          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
+// footer
+footer
+  .left-foot
+    h5(style='color: white;')
+      span S
+      | ecruite.S
+    p(style='color: rgba(172, 172, 172, 1);')
+      | Coppyright @ ZAIA Enterprise
+      br
+      |  Li&ecirc;n h&#x1EC7;: 0123456654 
+      br
+      |  - contact@recuite.vn
+  .right-foot
+    a(href='') &#x1EE8;ng Vi&ecirc;n
+    br
+    a(href='') C&ocirc;ng Vi&#x1EC7;c IT
+script(src='./Home.js')
+script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+// <script src="vendor/jquery/jquery.min.js"></script>
