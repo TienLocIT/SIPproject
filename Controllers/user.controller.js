@@ -21,17 +21,23 @@ module.exports={
         })
     },
     create:function (req, res) {
-        res.render("user/create");
+        res.render("user/Signup");
     },
     postCreate: async function (req, res) {
-     
-        if(!req.file)
-          req.body.avatar = "uploads\\26306066987a80ca8a795e384c726bc9";
-        else   
-          req.body.avatar = req.file.path.split('\\').slice(1).join('\\');
-        db.collection("User").insertOne(req.body)
-        .catch(error => console.error(error))
-        const user= await db.collection("User").findOne({userName: req.body.userName})
-        res.redirect("/information/"+user._id);
+       await db.collection("User").insertOne({"username":req.body.uname,"email":req.body.email,
+       "phoneNumber":req.body.phonenumb,
+      "password":req.body.psw,"Skill":req.body.skill,"dateOfBirth":req.body.date,"address":req.body.address
+      });
+      res.render("auth/login",{
+        username:req.body.uname
+      })
+        // if(!req.file)
+        //   req.body.avatar = "uploads\\26306066987a80ca8a795e384c726bc9";
+        // else   
+        //   req.body.avatar = req.file.path.split('\\').slice(1).join('\\');
+        // db.collection("User").insertOne(req.body)
+        // .catch(error => console.error(error))
+        // const user= await db.collection("User").findOne({userName: req.body.userName})
+        // res.redirect("/information/"+user._id);
       }
 }

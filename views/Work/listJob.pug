@@ -1,0 +1,95 @@
+doctype html
+head
+  title Title
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='/fa/css/all.css')
+  link(rel='stylesheet' href='/vendor/bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet' href='/css/JobList.css')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+// Menu
+.menu
+  ul
+    li.special_item
+      img(src='/images/logo.PNG' alt='' srcset='')
+    li
+      a(href='/') Home
+    li
+      a(href='/work') Job IT
+    li
+      a(href='') Contact Us
+    li
+      a(href='/users/create')
+        | Sign up
+        i.fas.fa-registered
+    li
+      a(href='/login')
+        | Login 
+        i.fas.fa-sign-in-alt
+// search box
+.searchbox
+  .input-group.mb-3
+    input.form-control(type='text' placeholder='Reaching' aria-label="Recipient's username" aria-describedby='basic-addon2')
+    .input-group-append
+      span#basic-addon2.input-group-text(style='background-color: red;color: white;')
+        i.fas.fa-search
+        |  Search
+  a.suggestion(href='') ReactJS
+  a.suggestion(href='') JavaScript
+  a.suggestion(href='') ASP.NET
+  a.suggestion(href='') React Native
+// content
+.content
+  .left.container
+    // outstanding
+    if Oustadingjob
+      h4 Outstading job
+      .row
+        each oustadingjob in Oustadingjob
+          .col-sm-6
+            .card
+              img.card-img-top.img-thumbnail(src=oustadingjob.ImageCompanyUrl alt='')
+              .card-body
+                h4.card-title=oustadingjob.NameJob
+                p.card-text=oustadingjob.Location
+    // banner
+    #banner
+      #banner-body
+        h3#banner-title THE FOURTH EXCLUSIVE CONFERENCE FOR BRANDS
+        button#banner-text Registe now
+    // number
+    p(style="border: 1px solid black;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;")=coutJobIT
+    // job list
+    .joblist
+      ul
+        each job in Jobs
+          li
+              .container
+                .row
+                  .col-3
+                    a(href='')
+                      img(src=job.ImageCompanyUrl alt='' srcset='')
+                  .col-8.ml-4
+                    a(href='' style="color:black;text-decoration:none;")
+                      h5=job.NameJob
+                      p=job.Location        
+// footer
+footer
+  .left-foot
+    h5(style='color: white;')
+      span S
+      | ecruite.S
+    p(style='color: rgba(172, 172, 172, 1);')
+      | Coppyright @ ZAIA Enterprise
+      br
+      |  Li&ecirc;n h&#x1EC7;: 0123456654 
+      br
+      |  - contact@recuite.vn
+  .right-foot
+    a(href='') &#x1EE8;ng Vi&ecirc;n
+    br
+    a(href='') C&ocirc;ng Vi&#x1EC7;c IT
+script(src='./JobList.js')
+script(src='vendor/jquery/jquery.min.js')

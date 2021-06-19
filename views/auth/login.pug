@@ -13,17 +13,17 @@ head
         img(src='/images/menu.png' alt='' srcset='')
       .menu-right
         li
-          a(href='') Home
+          a(href='/') Home
         li
-          a(href='') Job IT
+          a(href='/work') Job IT
         li
           a(href='') Contact Us
         li
-          a(href='')
-            | Signin 
+          a(href='/users/create')
+            | Sign up 
             i.fas.fa-registered
         li
-          a(href='')
+          a(href='/login')
             | Login 
             i.fas.fa-sign-in-alt
   .mobile
@@ -52,21 +52,22 @@ head
           a.nav_mobile_link(href='#')
             i.fas.fa-user-plus
             |        Sign Up
-        li
-          a.nav_mobile_link(href='#')
-            i.fas.fa-sign-in-alt
-            |        Logout
-  form(action='')
+  form(action='/login' method="POST")
     .imgcontainer
       .avatar
         i.far.fa-user-circle
     .container
       label(for='uname')
         b(style='color:#fff') Username
-      input(type='text' placeholder='Enter Username' name='uname' required='')
+      if username 
+        input(type='text' placeholder='Enter Username' name='userName' required='' value=username?username:"" )
+      else 
+        input(type='text' placeholder='Enter Username' name='userName' required='' value=values?values.userName:"" )
       label(for='psw')
         b(style='color:#fff') Password
-      input(type='password' placeholder='Enter Password' name='psw' required='')
+      input(type='password' placeholder='Enter Password' name='password' required='' value=values?values.password:"")
+      if error 
+        .error(style="color:red;")=error
       button(type='submit') Login
       label
         input(type='checkbox' checked='checked' name='remember')

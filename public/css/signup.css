@@ -24,7 +24,8 @@ form {
 }
   /* Full-width inputs */
 input[type=text], input[type=password], input[type=phonenumb],input[type=Date]{
-    width: 90%;
+    width: 79%;
+    height: 9px;
     padding: 12px 20px;
     margin: 8px 10px;
     display: inline-block;
@@ -45,10 +46,10 @@ button {
     background-color: #149E33;
     color: white;
     padding: 14px 20px;
-    margin: 0px 125px;
+    margin: 14px 178px;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 30%;
 }
 button:hover {
     opacity: 0.8;
@@ -81,10 +82,58 @@ button:hover {
 .gender{
   color: #fff;
   margin: 8px 10px;
+  display:flex;
 }
 .inputskills{
   display: inline-block; 
   width: 98%;
+}
+/* css for skill */
+.listskill{
+  background-color:#149E33;
+  height:15px;
+  width: 30px;
+  padding: 3px 2px;
+}
+/* chắc btn có kiểu stype submit rồi */
+#list{
+  background:#149E33;
+  padding: 8px 15px;
+  color: white;
+  margin: 9px 11px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  opacity: 0.9;
+}
+#list:hover{
+  opacity: 1;
+}
+.test{
+
+  color:red;
+  padding:0px 10px;
+  margin-left: 10px;
+}
+.button-skill{
+  display:flex;
+}
+.test:hover{
+  background: linear-gradient(rgba(149, 149, 151, 0.575),rgba(131, 129, 129, 0.548));
+  border: none;
+}
+.list-skill{
+  display:flex;
+  color:#fff;
+}
+.skill{
+  margin:8px 12px;
+}
+.addnew-skill{
+  display:flex;
+}
+span{
+  color:red;
 }
 /* end sign up */
 /* --------------responsive-------------- *//* Change styles for span and cancel button on extra small screens */

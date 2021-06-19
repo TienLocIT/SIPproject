@@ -17,23 +17,57 @@ app.set("view engine","pug")
 app.set("views","./views")
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cookieparser(process.env.SessionSecret))
+app.use(cookieparser("a1se6321"))
 app.get("/", async (req,res)=>{
-    var length=(await (db.collection("Job").find({}).toArray())).length
-    if(length%2==0){
-        length=length
+    var a=await db.collection("Company").find({}).toArray();
+    var cart=[];
+    for(var i=0;i<a.length;i++){
+        var nameCompany=a[i].nameCompany;
+        var count=await db.collection("Job").find({NameCompany:nameCompany}).count();
+        cart[nameCompany]=count;
     }
-    else{
-        length=length+1;
+    let company1,company2,company3,max1=0,max2=0,max3=0
+    for(var i=0;i<a.length;i++){
+        var nameCompany=a[i].nameCompany;
+        if(cart[nameCompany]>max1){
+            max1=cart[nameCompany]
+            company1=nameCompany
+        }
     }
+    for(var i=0;i<a.length;i++){
+        var nameCompany=a[i].nameCompany;
+        if(cart[nameCompany]<=max1 &&cart[nameCompany]>=max2 && nameCompany!=company1) {
+            max2=cart[nameCompany]
+            company2=nameCompany
+        }
+    }
+    for(var i=0;i<a.length;i++){
+        var nameCompany=a[i].nameCompany;
+        if(cart[nameCompany]<=max2 &&cart[nameCompany]>max3 && nameCompany!=company2){
+            max3=cart[nameCompany]
+            company3=nameCompany
+        }
+    }
+    var cookie=req.signedCookies.userId;
     res.render("index",{
-         Jobs: await db.collection("Job").find({}).limit(5).toArray(),
-         Jobs1:await db.collection("Job").find({}).limit(length/2).toArray(),
-         Jobs2:await db.collection("Job").find({}).skip(length/2).toArray(),
-         user:await await db.collection("User").findOne({_id:ObjectId(req.signedCookies.userId)})
+         companyFirst:await db.collection("Company").findOne({nameCompany:company1}),
+         companyTwo:await db.collection("Company").findOne({nameCompany:company2}),
+         companyThree:await db.collection("Company").findOne({nameCompany:company3}),
+         max1:max1+" Jobs IT",
+         max2:max2+" Jobs IT",
+         max3:max3+" Jobs IT",
+         Job1:await db.collection("Job").find({}).limit(3).toArray(),
+         Job2:await db.collection("Job").find({}).skip(3).limit(3).toArray(),
+         Job3:await db.collection("Job").find({}).skip(6).limit(3).toArray(),
+         Hotjob1:await db.collection("Job").find({}).limit(5).toArray(),
+         Hotjob2:await db.collection("Job").find({}).skip(5).limit(5).toArray(),
+         Latestjob1:await db.collection("Job").find({}).limit(4).toArray(),
+         Latestjob2:await db.collection("Job").find({}).skip(4).limit(4).toArray(),
+         Popularcompany:await db.collection("Company").find({}).limit(8).toArray(),
+         cookie:cookie,
     })
 })
-app.use("/auth",auth)
+app.use("/",auth)
 app.use("/work",jobRouter)
 app.use('/information', inforRoute);
 app.use('/users', userRoute);

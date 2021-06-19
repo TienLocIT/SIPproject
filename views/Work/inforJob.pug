@@ -3,113 +3,147 @@ head
   title Title
   // Required meta tags
   meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  meta(http-equiv='X-UA-Compatible' content='ie=edge')
-  title Document
-  link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
-  link(rel='stylesheet' href='/fa/css/all.css')
-  link(rel='stylesheet' href='/vendor/bootstrap/css/bootstrap.min.css')
-  link(rel='stylesheet' href='/css/Detail.css')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='stylesheet', href='/css/Detail.css')
+  // Bootstrap CSS
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
 // Menu
 .menu
-  ul
-    li.special_item
-      img(src='/images/logo.PNG' alt='' srcset='')
-    li
-      a(href='') Home
-    li
-      a(href='') Job IT
-    li
-      a(href='') Contact Us
-    li#GetJob
-      a(href='')
-        | Get Job 
-        i.fas.fa-arrow-right
-    li
-      a(href='')
-        | Login 
-        i.fas.fa-sign-in-alt
-.content
-  // Company
-  .left
-    // Company name
-    .company-name
-      .left-img
-        a(href='')
-          img(src='/images/ACB.png' alt='' srcset='')
-      .right-name
-        h2 ACB 
-        p Qu&#x1EAD;n Hai B&agrave; Tr&#x1B0;ng, H&agrave; N&#x1ED9;i
-    // detail
-    .detail
-      .head-title
-        .btn-group(role='group' aria-label='Basic example')
-          button.btn.btn-outline-dark(type='button') About Company
-          button.btn.btn-outline-dark(type='button') Jobs
-      .title
-        // positon
-        h3 02 Web Application Developer
-        a(href='') Login to see more
-        // description
-        .job
-          ul
-            span.name Job description:
-            li Learn the business, documents and design of the participating project;
-            li Participate in building and developing software in the field of management
-            li
-              | Warehouse, production management, insurance, finance and accounting, human resources,... on the .NET platform;
-            li Participate in fixing bugs and supporting customers ;
-            li Ensure progress, quality of work and regular reports to management;
-            li Other tasks as assigned by management.
-        // requirement
-        .job
-          ul
-            span.name Job requirement:
-            li Accept Fresher;
-            li
-              | Preference will be given to candidates with at least 02 years of experience in programming .NET, ASP.NET;
-            li Understanding SQL Server, Web API;
-            li Using Visual Studio 2017 &ndash; 2019;
-            li Proficient in MVC, HTML, CSS, Javascript;
-            li Knowing how to make Mobile App is an advantage.
-  .right
+  if cookie 
     ul
+      li.special_item
+        img(src='/images/logo.PNG', alt='', srcset='')
       li
-        span.name Website
-        br
-        label(for='') http://hdsoft.vn
+        a(href='/') Home
       li
-        span.name Address
-        br
-        label(for='') Hai B&agrave; Tr&#x1B0;ng, H&agrave; N&#x1ED9;i
+        a(href='/work') Job IT
       li
-        span.name Company size
-        br
-        label(for='') 10-24
+        a(href='') Contact Us
+      li#GetJob
+        a(href='/work/userOwn')
+          | Get Job 
+          i.fas.fa-arrow-right
+      li 
+        a(href='') User information
       li
-        span.name Address
-        br
-        label(for='') Hai B&agrave; Tr&#x1B0;ng, H&agrave; N&#x1ED9;i
+        a(href='')
+          | Logout
+          i.fas.fa-sign-in-alt
+  else 
+    ul
+      li.special_item
+        img(src='/images/logo.PNG' alt='' srcset='')
       li
-        span.name Company size
-        br
-        label(for='') 10-24
+        a(href='/') Home
       li
-        span.name Address
-        br
-        label(for='') Hai B&agrave; Tr&#x1B0;ng, H&agrave; N&#x1ED9;i
+        a(href='/work') Job IT
       li
-        span.name Company size
-        br
-        label(for='') 10-24
-.btn-danger.btn.nut Recruiting
+        a(href='') Contact Us
+      li
+        a(href='/users/create')
+          | Sign up 
+          i.fas.fa-registered
+      li
+        a(href='/login')
+          | Login 
+          i.fas.fa-sign-in-alt
+.content
+  .left
+    // company name
+    .container.mt-2
+      .row
+        .col-3
+          a(href='')
+            img(src=Job.ImageCompanyUrl, alt='', srcset='')
+        .col-8.ml-4
+          h5=Company.nameCompany
+          p=Job.Location
+    // selector
+    .selector
+      a(href='http://') About Company
+      a(href='') Jobs
+    // title
+    .title
+      h3=Job.NameJob
+    // job
+    .job
+      h4 Job Description
+      if Job.Crawl=="Topdev"
+        ul
+          each jobDescription in Job.JobDescription
+            li=jobDescription
+      else 
+        #job-description 
+    // job
+    .job
+      h4 Job Requirenments
+      if Job.Crawl=="Topdev"
+        ul
+          each jobRequirements in Job.JobRequirements
+            li=jobRequirements
+      else 
+        #job-requirements
+         
+    // location
+    .location.job
+      ul
+        if Job.Crawl=="Topdev"
+          h4 Location
+          li
+            label(for='')=Job.Location
+          h4 Experience
+          li
+            label(for='')=Job.YearOfExperiece
+          h4 Job Type
+          li
+            label(for='')=Job.JobType
+          h4 Skills
+          li
+            each skill in Job.Skills
+              label.box-skill.skill(for='')=skill
+        else 
+          h4 Location
+          li
+            label(for='') Hai Ba Trung, Ha Noi
+          h4 Skills
+          li
+            label.box-skill.skill(for='') ReactJS
+    // job list
+    each jobs in Jobs
+      .job-list
+        h5=jobs.NameJob
+        p=jobs.Location
+        each skill in jobs.Skills
+          label.box-skill.skill(for='')=skill
+        .nut Apply
+    // job list
+  .right
+    // location
+    .location.job
+      ul
+        if Job.Crawl == "Topdev"
+          h4 Location
+          li
+            label(for='')=Company.locationCompany
+          h4 Website
+          li
+            label(for='')=Company.websitCompany
+          h4 Company size
+          li
+            label(for='')=Company.companySize 
+          h4 Country Company
+          li
+            label(for='')=Company.countryCompany
+          h4 Tech Stack 
+          li 
+            each skill in Company.TechStack 
+              label.box-skillCompany.skill(for='')=skill 
+button.btn.btn-danger(style='position: absolute; right: 5%;') Recruite
 // footer
-footer
+footer.mt-5
   .left-foot
     h5(style='color: white;')
-      span S
+      span(style='color: green;') S
       | ecruite.S
     p(style='color: rgba(172, 172, 172, 1);')
       | Coppyright @ ZAIA Enterprise
@@ -121,5 +155,21 @@ footer
     a(href='') &#x1EE8;ng Vi&ecirc;n
     br
     a(href='') C&ocirc;ng Vi&#x1EC7;c IT
-script(src='./Detail.js')
-script(src='vendor/jquery/jquery.min.js')
+// Optional JavaScript
+// jQuery first, then Popper.js, then Bootstrap JS
+script.
+            function changetoHTML(data){
+                var descriptionJob=data
+                descriptionJob = descriptionJob.replace(/&gt;/g, '>')
+                descriptionJob = descriptionJob.replace(/&lt;/g, '<');
+                descriptionJob = descriptionJob.replace(/&quot;/g, '"');
+                descriptionJob = descriptionJob.replace(/&apos;/g, "'");
+                descriptionJob = descriptionJob.replace(/&amp;/g, '&');
+                return descriptionJob
+            }
+            document.getElementById("job-description").innerHTML = changetoHTML("#{Job.JobDescription}")
+            document.getElementById("job-requirements").innerHTML = changetoHTML("#{Job.JobRequirements}")
+            
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')

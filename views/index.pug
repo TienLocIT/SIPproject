@@ -14,23 +14,44 @@ head
   link(href='https://fonts.googleapis.com/css2?family=Paprika&display=swap' rel='stylesheet')
 // Menu
 .menu
-  ul
+  if cookie 
+   ul
     li.special_item
-      img(src='/images/logo.PNG' alt='' srcset='')
+      img(src='/images/logo.PNG', alt='', srcset='')
     li
-      a(href='') Home
+      a(href='/') Home
     li
-      a(href='') Job IT
+      a(href='/work') Job IT
     li
       a(href='') Contact Us
+    li#GetJob
+      a(href='/work/userOwn')
+        | Get Job 
+        i.fas.fa-arrow-right
+    li 
+       a(href='') User information
     li
       a(href='')
-        | Signin 
-        i.fas.fa-registered
-    li
-      a(href='')
-        | Login 
+        | Logout
         i.fas.fa-sign-in-alt
+  else 
+    ul
+      li.special_item
+        img(src='/images/logo.PNG' alt='' srcset='')
+      li
+        a(href='/') Home
+      li
+        a(href='/work') Job IT
+      li
+        a(href='') Contact Us
+      li
+        a(href='/users/create')
+          | Sign up
+          i.fas.fa-registered
+      li
+        a(href='/login')
+          | Login 
+          i.fas.fa-sign-in-alt
 // banner
 #banner
   #banner-body
@@ -62,29 +83,29 @@ head
         #carouselId.carousel.slide(data-ride='carousel')
           .carousel-inner(role='listbox')
             .carousel-item.active
-              img(src='./images/leftIntro.jpg' alt='First slide')
+              img(src=companyFirst.Image alt='First slide' style="height:65px")
               .right-content(style='color: black;')
                 .card
                   .card-body
-                    h5.card-title Korean IT Comapny
-                    p.card-text Ha No, HCM
-                    a(href='') xem them
+                    h5.card-title=companyFirst.nameCompany
+                    p.card-text=companyFirst.locationCompany
+                    a(href='/work?company='+companyFirst.nameCompany style="color:red")=max1
             .carousel-item
-              img(src='./images/leftIntro.jpg' alt='Second slide')
+              img(src=companyTwo.Image alt='Second slide' style="height:168px")
               .right-content(style='color: black;')
                 .card
                   .card-body
-                    h5.card-title Korean IT Comapny
-                    p.card-text Ha No, HCM
-                    a(href='') xem them
+                    h5.card-title=companyTwo.nameCompany
+                    p.card-text=companyTwo.locationCompany
+                    a(href='/work?company='+companyTwo.nameCompany style="color:red")=max2
             .carousel-item
-              img(src='./images/leftIntro.jpg' alt='Third slide')
+              img(src=companyThree.Image alt='Third slide' style="height:311px")
               .right-content(style='color: black;')
                 .card
                   .card-body
-                    h5.card-title Korean IT Comapny
-                    p.card-text Ha No, HCM
-                    a(href='') xem them
+                    h5.card-title=companyThree.nameCompany
+                    p.card-text=companyThree.locationCompany
+                    a(href='/work?company='+companyThree.nameCompany style="color:red")=max3
           a.carousel-control-next(href='#carouselId' role='button' data-slide='next')
             span.carousel-control-next-icon(aria-hidden='true' style='background-color: rgba(0, 0, 0, 0.816);')
             span.sr-only Next
@@ -99,91 +120,38 @@ head
           li(data-target='#carouselHotJob' data-slide-to='2')
         .carousel-inner(role='listbox')
           .carousel-item.active
-            ul
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/Mobi.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/VNIB.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Advesa Digital Solutions Front-end React Developer 
-                      a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/ACB.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
-                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+            each job1 in Job1
+              ul
+                li
+                  .container
+                    .row
+                      .col-3
+                        a(href='')
+                          img(src=job1.ImageCompanyUrl alt='' srcset='')
+                      .col-8.ml-4
+                        h5=job1.NameJob
           .carousel-item
-            ul
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/Mobi.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
-                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/VNIB.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Advesa Digital Solutions Front-end React Developer 
-                      a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/ACB.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
-                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+            each job2 in Job2
+              ul
+                li
+                  .container
+                    .row
+                      .col-3
+                        a(href='')
+                          img(src=job2.ImageCompanyUrl alt='' srcset='')
+                      .col-8.ml-4
+                        h5=job2.NameJob
           .carousel-item
-            ul
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/Mobi.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
-                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/VNIB.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Advesa Digital Solutions Front-end React Developer 
-                      a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-              li
-                .container
-                  .row
-                    .col-3
-                      a(href='')
-                        img(src='./images/ACB.png' alt='' srcset='')
-                    .col-8.ml-4
-                      h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
-                      a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+            each job3 in Job3
+              ul
+                li
+                  .container
+                    .row
+                      .col-3
+                        a(href='')
+                          img(src=job3.ImageCompanyUrl alt='' srcset='')
+                      .col-8.ml-4
+                        h5=job3.NameJob
         a.carousel-control-prev(href='#carouselHotJob' role='button' data-slide='prev')
           span.carousel-control-prev-icon(aria-hidden='true')
           span.sr-only Previous
@@ -198,55 +166,18 @@ head
       .carousel-inner(role='listbox')
         .carousel-item.active
           .row
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
+            each hotjob1 in Hotjob1
+              .company
+                a(href=" ")
+                  img.company-img(src=hotjob1.ImageCompanyUrl alt='' srcset='')
+                p=hotjob1.NameJob
         .carousel-item
           .row
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-        .carousel-item
-          .row
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
-            .company
-              img.company-img(src='./images/Hansen.png' alt='' srcset='')
-              p Hansen Technologies
+            each hotjob2 in Hotjob2
+              .company
+                a(href=" ")
+                  img.company-img(src=hotjob2.ImageCompanyUrl alt='' srcset='')
+                p=hotjob2.NameJob
       a.carousel-control-prev(href='#carouselFeaturedJob' role='button' data-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true' style='background-color: rgba(0, 0, 0, 0.816);')
         span.sr-only Previous
@@ -262,80 +193,26 @@ head
   .row
     .col-sm-6
       ul
-        li
-          .container
-            .row
-              .col-3
-                a(href='')
-                  img(src='/images/Mobi.png' alt='' srcset='')
-              .col-8.ml-4
-                h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
-                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-        li
-          .container
-            .row
-              .col-3
-                a(href='')
-                  img(src='/images/VNIB.png' alt='' srcset='')
-              .col-8.ml-4
-                h5 Advesa Digital Solutions Front-end React Developer 
-                a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-        li
-          .container
-            .row
-              .col-3
-                a(href='')
-                  img(src='/images/ACB.png' alt='' srcset='')
-              .col-8.ml-4
-                h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
-                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-        li
-          .container
-            .row
-              .col-3
-                a(href='')
-                  img(src='/images/ACB.png' alt='' srcset='')
-              .col-8.ml-4
-                h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
-                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        each latestjob1 in Latestjob1
+          li
+              .container
+                .row
+                  .col-3
+                    a(href='')
+                      img(src=latestjob1.ImageCompanyUrl alt='' srcset='')
+                  .col-8.ml-4
+                    h5=latestjob1.NameJob
     .col-sm-6
       ul
-        li
-          .container
-            .row
-              .col-3
-                a(href='')
-                  img(src='/images/Mobi.png' alt='' srcset='')
-              .col-8.ml-4
-                h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
-                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-        li
-          .container
-            .row
-              .col-3
-                a(href='')
-                  img(src='/images/Mobi.png' alt='' srcset='')
-              .col-8.ml-4
-                h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
-                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-        li
-          .container
-            .row
-              .col-3
-                a(href='')
-                  img(src='/images/VNIB.png' alt='' srcset='')
-              .col-8.ml-4
-                h5 Advesa Digital Solutions Front-end React Developer 
-                a.more(href='#') 1**** USD &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
-        li
-          .container
-            .row
-              .col-3
-                a(href='')
-                  img(src='/images/ACB.png' alt='' srcset='')
-              .col-8.ml-4
-                h5 Nh&acirc;n vi&ecirc;n/Chuy&ecirc;n vi&ecirc;n t&#x1B0; v&#x1EA5;n gi&#x1EA3;i ph&aacute;p CNTT
-                a.more(href='#') &Dstrok;&abreve;ng nh&#x1EAD;p &dstrok;&#x1EC3; xem m&#x1EE9;c l&#x1B0;&#x1A1;ng
+        each latestjob2 in Latestjob2
+          li
+            .container
+              .row
+                .col-3
+                  a(href='')
+                    img(src=latestjob2.ImageCompanyUrl alt='' srcset='')
+                .col-8.ml-4
+                  h5=latestjob2.NameJob
 // img-show
 .container-fluid.show(style="background-image: url('/images/Show.png');")
   .img-show
@@ -364,55 +241,14 @@ head
     span Company
   h5(style='text-align: center;') Here you can see
   .row.companys
-    .col-sm-4
-      .card
-        a(href='')
-          img.card-img-top(src='/images/Korean.png' alt='')
-        .card-body
-          h4.card-title Korean IT Company
-          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
-          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
-    .col-sm-4
-      .card
-        a(href='')
-          img.card-img-top(src='/images/Korean.png' alt='')
-        .card-body
-          h4.card-title Korean IT Company
-          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
-          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
-    .col-sm-4
-      .card
-        a(href='')
-          img.card-img-top(src='/images/Korean.png' alt='')
-        .card-body
-          h4.card-title Korean IT Company
-          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
-          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
-  .row.companys
-    .col-sm-4
-      .card
-        a(href='')
-          img.card-img-top(src='/images/Korean.png' alt='')
-        .card-body
-          h4.card-title Korean IT Company
-          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
-          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
-    .col-sm-4
-      .card
-        a(href='')
-          img.card-img-top(src='/images/Korean.png' alt='')
-        .card-body
-          h4.card-title Korean IT Company
-          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
-          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
-    .col-sm-4
-      .card
-        a(href='')
-          img.card-img-top(src='/images/Korean.png' alt='')
-        .card-body
-          h4.card-title Korean IT Company
-          p.card-text H&#x1ED3; Ch&iacute; Minh, H&agrave; N&#x1ED9;i
-          label.ngay(for='') 4 ng&agrave;y tr&#x1B0;&#x1EDB;c
+    each popularcompany in Popularcompany
+      .col-sm-4
+        .card
+          a(href='')
+            img.card-img-top(src=popularcompany.Image alt='' style="width:220px")
+          .card-body
+            h4.card-title=popularcompany.nameCompany
+            p.card-text=popularcompany.locationCompany
 // footer
 footer
   .left-foot

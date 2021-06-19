@@ -1,0 +1,99 @@
+doctype html
+head
+  title Title
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='stylesheet', href='/css/Detail.css')
+  // Bootstrap CSS
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+// Menu
+.menu
+  ul
+    li.special_item
+      img(src='/images/logo.PNG', alt='', srcset='')
+    li
+      a(href='') Home
+    li
+      a(href='') Job IT
+    li
+      a(href='') Contact Us
+    li
+      a(href='')
+        | Signin 
+        i.fas.fa-registered
+    li
+      a(href='')
+        | Login 
+        i.fas.fa-sign-in-alt
+.content
+  .left
+    // company name
+    .container.mt-2
+      .row
+        .col-3
+          a(href='')
+            img(src='/images/Mobi.png', alt='', srcset='')
+        .col-8.ml-4
+          h5 Trung T&acirc;m T&iacute;nh C&#x1B0;&#x1EDB;c v&agrave; Thanh Kho&#x1EA3;n MobiFone 
+          p HCM, Ha Noi
+    // selector
+    .selector
+      a(href='http://') About Company
+      a(href='') Jobs
+    // title
+    .location.job
+        p
+            a ab
+    // job list
+    each jobs in Jobs
+      .job-list
+        h5=jobs.NameJob
+        p=jobs.Location
+        each skill in jobs.Skills
+          label.box-skill.skill(for='')=skill
+      .nut Apply
+    // job list
+  .right
+    // location
+    .location.job
+      ul
+        if Company.crawl == "Topdev"
+          h4 Location
+          li
+            label(for='')=Company.locationCompany
+          h4 Website
+          li
+            label(for='')=Company.websitCompany
+          h4 Company size
+          li
+            label(for='')=Company.companySize 
+          h4 Country Company
+          li
+            label(for='')=Company.countryCompany
+          h4 Tech Stack 
+          li 
+            each skill in Company.TechStack 
+              label.box-skillCompany.skill(for='')=skill 
+button.btn.btn-danger(style='position: absolute; right: 5%;') Recruite
+// footer
+footer.mt-5
+  .left-foot
+    h5(style='color: white;')
+      span(style='color: green;') S
+      | ecruite.S
+    p(style='color: rgba(172, 172, 172, 1);')
+      | Coppyright @ ZAIA Enterprise
+      br
+      |  Li&ecirc;n h&#x1EC7;: 0123456654 
+      br
+      |  - contact@recuite.vn
+  .right-foot
+    a(href='') &#x1EE8;ng Vi&ecirc;n
+    br
+    a(href='') C&ocirc;ng Vi&#x1EC7;c IT
+// Optional JavaScript
+// jQuery first, then Popper.js, then Bootstrap JS
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')

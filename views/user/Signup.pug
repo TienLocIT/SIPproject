@@ -1,0 +1,103 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet', href='/css/signup.css')
+  link(rel='stylesheet', href='/font/css/all.css')
+.arealogin
+  .menu
+    ul
+      li.special_item
+        img(src='/image/menu.png', alt='', srcset='')
+      .menu-right
+        li
+          a(href='/') Home
+        li
+          a(href='/work') Job IT
+        li
+          a(href='') Contact Us
+        li
+          a(href='/users/create')
+            | Sign up 
+            i.fas.fa-registered
+        li
+          a(href='/login')
+            | Login 
+            i.fas.fa-sign-in-alt
+  .mobile
+    // check kiểm tra overlay
+    input#nav-mobile-input.navss(type='checkbox', name='')
+    // Vùng đen
+    label.nav__overlay(for='nav-mobile-input')
+    // icon menu
+    label.nav__bars-btn(for='nav-mobile-input')
+      i.fas.fa-bars
+    .nav_mobile
+      label.nav_bars-close(for='nav-mobile-input')
+        i.fas.fa-times
+      ul.nav_mobile-list
+        li
+          a.nav_mobile_link(href='/')     Home
+        li
+          a.nav_mobile_link(href='/work')
+            i.fas.fa-award
+            |        Job IT
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-file-signature
+            |        Contact Us
+        li
+          a.nav_mobile_link(href='/users/create')
+            i.fas.fa-user-plus
+            |        Sign Up
+        li
+          a.nav_mobile_link(href='#')
+            i.fas.fa-sign-in-alt
+            |        Logout
+  form(action='/users/create' method="POST")
+    .imgcontainer
+      .avatar
+        // <i class="far fa-registered">egister</i>
+        i.fas.fa-registered egister
+    .container
+      .form-group
+        input(type='text', placeholder='Username', name='uname', required='' value=values?values.uname:"")
+        input(type='phonenumb', placeholder='Phone number', name='phonenumb', required='' value=values?values.phonenumb:"")
+      .form-group
+        input(type='text', placeholder='Email', name='email', required='' value=values?values.email:"")
+        input(type='text', placeholder='Re-enter email', name='reemail', required='' value=values?values.reemail:"")
+      .form-group
+        input(type='password', placeholder='Enter Password', name='psw', required='' value=values?values.psw:"")
+        input(type='text', placeholder='Re-enter password', name='repsw', required='' value=values?values.repsw:"")
+      label.dateofb Date of birth
+      .form-group
+        input(type='date', placeholder='Enter Password', name='date', required='' value=values?values.date:"")
+        input(type='text', placeholder='Address', name='address', required='' value=values?values.address:"")
+      .gender
+        input#male(type='radio', name='gender', value='male')
+        label(for='male') Male
+        br
+        input#female(type='radio', name='gender', value='female')
+        label(for='female') Female
+        br
+      if error
+        .errorr(style='color:#fff;margin-left: 12px;') Error: 
+          span=error
+      .skill(style='position:relative')
+        // <label for="" style="color:#fff;">Skills :</label>
+        .list-skill
+          | Skills :
+        .addnew-skill
+          label(for='', style='color:#fff;')
+            | Add new skill
+            span *
+          div
+            input#skill.text-skill(type='text', value='')
+          .button-skill
+            // <button id="list" onclick="addItem();" >Add skill</button>
+            input#list(type='button', value='Add skill', onclick='addItem();')
+            input#list(type='button', value='Del skill', onclick='deleteitem();')
+      button(type='submit') Resister
+script(src='/js/information.js')
