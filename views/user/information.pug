@@ -1,16 +1,16 @@
 doctype html
 head
   meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title Document
-  link(rel='stylesheet' href='/css/information.css')
-  link(rel='stylesheet' href='/font/css/all.css')
+  link(rel='stylesheet', href='/css/information.css')
+  link(rel='stylesheet', href='/font/css/all.css')
 .arealogin
   .menu
     ul
       li.special_item
-        img(src='/images/menu.png' alt='' srcset='')
+        img(src='./image/menu.png', alt='', srcset='')
       .menu-right
         li
           a(href='') Home
@@ -28,7 +28,7 @@ head
             i.fas.fa-sign-in-alt
   .mobile
     // check kiểm tra overlay
-    input#nav-mobile-input.navss(type='checkbox' name='')
+    input#nav-mobile-input.navss(type='checkbox', name='')
     // Vùng đen
     label.nav__overlay(for='nav-mobile-input')
     // icon menu
@@ -60,43 +60,49 @@ head
     .container
       h1 Your information
       p Can be changed your information
-      marquee(behavior='' direction='') New job! $650-1000 USD Frontend wed app Developer Qu&#x1EAD;n &Dstrok;&#x1ED1;ng &Dstrok;a- H&agrave; N&#x1ED9;i
       hr
       .input-group
         .input-title
           | Full name 
           span *
-        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+        input.input-text(autocomplete='off', name='', required='', spellcheck='false', type='text', value='')
       .input-group
         .input-title
           | Phone number: 
           span *
-        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+        input.input-text(autocomplete='off', name='', required='', spellcheck='false', type='text', value='')
       .input-group
         .input-title
           | Email: 
           span *
-        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+        input.input-text(autocomplete='off', name='', required='', spellcheck='false', type='text', value='')
       .input-group
         .input-title
           | Change password Now 
           span *
-        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+        input.input-text(autocomplete='off', name='', required='', spellcheck='false', type='text', value='')
       .input-group
         .input-title
           | Address 
           span *
-        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+        input.input-text(autocomplete='off', name='', required='', spellcheck='false', type='text', value='')
       .input-group
         .input-title
           | Hobbies 
           span *
-        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
-      .input-group
-        .input-title
-          | Skills 
-          span *
-        input.input-text(autocomplete='off' name='' required='' spellcheck='false' type='text' value='')
+        input.input-text(autocomplete='off', name='', required='', spellcheck='false', type='text', value='')
+      .skill
+        .list-skill
+          label(for='') Skills :
+        .addnew-skill
+          label(for='') Add new skill
+          div(style='position: relative;')
+            input#skill.text-skill(type='text', value='')
+        .button-skill
+          // <button id="list" onclick="addItem();" >Add skill</button>
+          input#list(type='button', value='Add skill', onclick='addItem();')
+          input#list(type='button', value='Del skill', onclick='deleteitem();')
       hr
       button.updatebtn(type='submit') Update
       button.updatebtn(type='submit') Cancel
+script(src='information.js')
